@@ -1,19 +1,98 @@
-$primary : #9356DC;
-$secondary : #FF79DA;
-$tertiary : #99E2D0;
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+@mixin column($justify, $align) {
+  display: flex;
+  flex-flow: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin row($justify, $align) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, 0.9);
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Shrikhand', cursive;
+a {
+  text-decoration: none;
 }
 
+h1 {
+  font-family: "Shrikhand", cursive;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: calc(26px + (4) * (100vw - 300px) / (1600 - 300));
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+p {
+    &.faded {
+        font-size: calc(16px + (4) * (100vw - 300px) / (1600 - 300));
+        color: rgba(0, 0, 0, 0.75)
+    }
+}
+
+header {
+  @include row(center, center);
+  padding: 0.9em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.location {
+  @include row(center, center);
+  padding: 0.9em;
+  background-color: rgba(242, 242, 242, 0.2);
+
+  p {
+    @include row(center, center);
+    font-size: calc(14px + (4) * (100vw - 300px) / (1600 - 300));
+    font-weight: 600;
+
+    span.material-icons {
+      margin: 0px 5px;
+    }
+  }
+}
+
+.display {
+    @include column(center,center);
+    text-align: center;
+    padding: 2em 2em;
+    background-color: rgb(242, 242, 242);    
+    h2 {
+        font-size: calc(20px + (4) * (100vw - 300px)/(1600 - 300));
+        font-weight: 700;
+        margin: 1em 0;
+    }
+
+    p.faded {
+        margin: 1em 0;
+    }
 
 
+    &-action {
+        margin: 1em 0;
+        padding: 1em 1.5em;
+        border-radius: 2em;
+        border:none;
+        background: rgb(147,86,220);
+        background: linear-gradient(345deg, $primary 27%, $secondary 100%);
+        color: white;
+        cursor: pointer;
+
+    }
+}
