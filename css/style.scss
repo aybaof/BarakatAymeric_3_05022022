@@ -39,11 +39,17 @@ h1 {
   line-height: 30px;
 }
 
+h2 {
+  font-size: calc(20px + (4) * (100vw - 300px) / (1600 - 300));
+  font-weight: 700;
+  margin: 1em 0;
+}
+
 p {
-    &.faded {
-        font-size: calc(16px + (4) * (100vw - 300px) / (1600 - 300));
-        color: rgba(0, 0, 0, 0.75)
-    }
+  &.faded {
+    font-size: calc(16px + (4) * (100vw - 300px) / (1600 - 300));
+    color: rgba(0, 0, 0, 0.75);
+  }
 }
 
 header {
@@ -55,7 +61,7 @@ header {
 .location {
   @include row(center, center);
   padding: 0.9em;
-  background-color: rgba(242, 242, 242, 0.2);
+  background-color: rgb(234,234,234);
 
   p {
     @include row(center, center);
@@ -69,30 +75,177 @@ header {
 }
 
 .display {
+  @include column(center, center);
+  text-align: center;
+  padding: 2em 2em;
+  background-color: rgb(246, 246, 246);
+
+  p.faded {
+    margin: 1em 0;
+  }
+
+  &-action {
+    margin: 1em 0;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: none;
+    background: rgb(147, 86, 220);
+    background: linear-gradient(345deg, $primary 27%, $secondary 100%);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.userflow {
+  padding: 1.5em;
+
+  &-wrapper {
+    @include column(center, center);
+  }
+
+  &-card {
+    @include row(start, center);
+    position: relative;
+    padding: 1.5em 1.5em;
+    border-radius: 2em;
+    width: 100%;
+    background-color: rgba(242, 242, 242, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+    max-width: 400px;
+    cursor: pointer;
+    margin: 1em 0;
+
+    &:hover,:active {
+      background-color: rgb(245, 237, 255);
+      transition: 0.3s;
+
+      .material-icons {
+        color: $primary;
+      }
+    }
+
+    &-paste {
+      position: absolute;
+      left: -12.5px;
+      width: 25px;
+      height: 25px;
+      background-color: $primary;
+      border-radius: 50%;
+      color: white;
+      @include row(center, center);
+    }
+
+    &-text {
+      width: 100%;
+      font-weight: 500;
+      font-size: calc(16px + (4) * (100vw - 300px) / (1600 - 300));
+      @include row(space-around, center);
+
+      .material-icons {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.restaurant {
+  background-color: rgb(246, 246, 246);
+  padding: 1.5em;
+
+
+  &-wrapper {
     @include column(center,center);
-    text-align: center;
-    padding: 2em 2em;
-    background-color: rgb(242, 242, 242);    
-    h2 {
-        font-size: calc(20px + (4) * (100vw - 300px)/(1600 - 300));
-        font-weight: 700;
-        margin: 1em 0;
+  }
+
+  &-card {
+    width: 100%;
+    border-radius: 1em;
+    background-color: #fff;
+    margin: 1em 0;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1);
+
+    .img-wrapper {
+      height: 70%;
+      width: 100%;
+      display: flex;
+      position: relative;
+      max-height: 200px;
+
+
+      .alert-new {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        padding: 0.5em 1em;
+        text-align: center;
+        background-color: $tertiary;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+        border-radius: 0.2em;
+        font-size: calc(14px + (4) * (100vw - 300px)/(1600 - 300));
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+      }
     }
 
-    p.faded {
-        margin: 1em 0;
+    .card-body {
+      @include row(space-between,center);
+
+      .text-wrapper {
+        @include column(center,start);
+        width: 80%;
+        padding: 0.5em 1em;
+      }
+
+      h3 {
+        width:80%
+
+      }
+
+      p.faded {
+        width: 80%;
+      }
+
+      .icon-wrapper {
+        width: 20%;
+        height: 100%;
+        @include column(center,center);
+      }
     }
+  }
+}
 
+footer {
 
-    &-action {
-        margin: 1em 0;
-        padding: 1em 1.5em;
-        border-radius: 2em;
-        border:none;
-        background: rgb(147,86,220);
-        background: linear-gradient(345deg, $primary 27%, $secondary 100%);
+  background-color: rgba(53, 53, 53,1);
+  padding: 1.5em;
+  
+  h4 {
+    font-family: "Shrikhand", cursive;
+    font-size: calc(20px + 4 * (100vw - 300px)/(1600 - 300));
+    color: white;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+    @include column(center,start);
+    padding: 1em 0;
+
+    li {
+      color: white;
+      margin: 0.5em 0;
+      .material-icons {
         color: white;
-        cursor: pointer;
-
+        font-size: calc(14px + 4 * (100vw - 300px)/(1600 - 300));
+        margin-right: 0.5em;
+      }
     }
+  }
 }
