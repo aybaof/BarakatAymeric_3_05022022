@@ -61,7 +61,7 @@ header {
 .location {
   @include row(center, center);
   padding: 0.9em;
-  background-color: rgb(234,234,234);
+  background-color: rgb(234, 234, 234);
 
   p {
     @include row(center, center);
@@ -115,7 +115,8 @@ header {
     cursor: pointer;
     margin: 1em 0;
 
-    &:hover,:active {
+    &:hover,
+    :active {
       background-color: rgb(245, 237, 255);
       transition: 0.3s;
 
@@ -153,9 +154,8 @@ header {
   background-color: rgb(246, 246, 246);
   padding: 1.5em;
 
-
   &-wrapper {
-    @include column(center,center);
+    @include column(center, center);
   }
 
   &-card {
@@ -163,7 +163,7 @@ header {
     border-radius: 1em;
     background-color: #fff;
     margin: 1em 0;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
 
     .img-wrapper {
       height: 70%;
@@ -171,7 +171,6 @@ header {
       display: flex;
       position: relative;
       max-height: 200px;
-
 
       .alert-new {
         position: absolute;
@@ -183,7 +182,7 @@ header {
         color: rgba(0, 0, 0, 0.6);
         font-weight: 500;
         border-radius: 0.2em;
-        font-size: calc(14px + (4) * (100vw - 300px)/(1600 - 300));
+        font-size: calc(14px + (4) * (100vw - 300px) / (1600 - 300));
       }
 
       img {
@@ -195,17 +194,16 @@ header {
     }
 
     .card-body {
-      @include row(space-between,center);
+      @include row(space-between, center);
 
       .text-wrapper {
-        @include column(center,start);
+        @include column(center, start);
         width: 80%;
         padding: 0.5em 1em;
       }
 
       h3 {
-        width:80%
-
+        width: 80%;
       }
 
       p.faded {
@@ -215,36 +213,38 @@ header {
       .icon-wrapper {
         width: 20%;
         height: 100%;
-        @include column(center,center);
+        @include column(center, center);
       }
     }
   }
 }
 
 footer {
-
-  background-color: rgba(53, 53, 53,1);
+  background-color: rgba(53, 53, 53, 1);
   padding: 1.5em;
-  
+
   h4 {
     font-family: "Shrikhand", cursive;
-    font-size: calc(20px + 4 * (100vw - 300px)/(1600 - 300));
+    font-size: calc(20px + 4 * (100vw - 300px) / (1600 - 300));
     color: white;
     font-weight: 400;
   }
 
   ul {
     list-style: none;
-    @include column(center,start);
+    @include column(center, start);
     padding: 1em 0;
 
     li {
-      color: white;
       margin: 0.5em 0;
       .material-icons {
         color: white;
-        font-size: calc(14px + 4 * (100vw - 300px)/(1600 - 300));
+        font-size: calc(14px + 4 * (100vw - 300px) / (1600 - 300));
         margin-right: 0.5em;
+      }
+      a {
+        color: white;
+        @include row (start,center);
       }
     }
   }

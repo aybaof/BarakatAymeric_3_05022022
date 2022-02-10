@@ -107,11 +107,13 @@ header {
   cursor: pointer;
   margin: 1em 0;
 }
-.userflow-card:hover, .userflow-card :active {
+.userflow-card:hover,
+.userflow-card :active {
   background-color: #f5edff;
   transition: 0.3s;
 }
-.userflow-card:hover .material-icons, .userflow-card :active .material-icons {
+.userflow-card:hover .material-icons,
+.userflow-card :active .material-icons {
   color: #9356dc;
 }
 .userflow-card-paste {
@@ -231,13 +233,19 @@ footer ul {
   padding: 1em 0;
 }
 footer ul li {
-  color: white;
   margin: 0.5em 0;
 }
 footer ul li .material-icons {
   color: white;
   font-size: calc(14px + 4 * (100vw - 300px) / 1300);
   margin-right: 0.5em;
+}
+footer ul li a {
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
