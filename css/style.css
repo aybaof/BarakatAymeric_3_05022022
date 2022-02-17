@@ -212,6 +212,21 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
 }
+@media (min-width: 768px) {
+  .userflow-wrapper {
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .userflow-card {
+    width: 40%;
+  }
+}
+@media (min-width: 992px) {
+  .userflow-card {
+    width: 30%;
+  }
+}
 
 .restaurant {
   background-color: #f6f6f6;
@@ -283,6 +298,21 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .restaurant-wrapper {
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .restaurant-wrapper a {
+    width: 45%;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant-wrapper a {
+    width: 30%;
+  }
+}
 
 .menu {
   background-color: #f6f6f6;
@@ -311,6 +341,12 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
 .menu .display-action {
   width: 50%;
 }
+@media (min-width: 992px) {
+  .menu .display-action {
+    margin: 3em auto;
+    width: 25%;
+  }
+}
 .menu-body {
   width: 100%;
   display: flex;
@@ -318,8 +354,25 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   justify-content: start;
   align-items: start;
 }
+@media (min-width: 768px) {
+  .menu-body {
+    flex-flow: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
 .menu-body section {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .menu-body section {
+    width: 30%;
+  }
+}
+@media (min-width: 992px) {
+  .menu-body section {
+    width: 25%;
+  }
 }
 .menu-body .section-header {
   margin-left: 15px;

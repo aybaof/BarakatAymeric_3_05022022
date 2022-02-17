@@ -147,29 +147,34 @@ button.like {
     -webkit-background-clip: text;
     color: transparent;
 
-    &.fullheart{
+    &.fullheart {
       position: absolute;
       opacity: 0;
-      
     }
   }
 
   &:hover > .material-icons,
   &:active > .material-icons {
     background-position-y: top;
-    transition: all 2s ease-out;        
+    transition: all 2s ease-out;
   }
 
-  &:hover >.material-icons.fullheart,
-  &:active >.material-icons.fullheart {
+  &:hover > .material-icons.fullheart,
+  &:active > .material-icons.fullheart {
     animation-name: fullheart;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
-    @keyframes fullheart{
-      0% {opacity:0;}
-      25% {opacity: 1;}
-      100%{opacity:1}
+    @keyframes fullheart {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 }
@@ -224,6 +229,23 @@ button.like {
         color: rgba(0, 0, 0, 0.6);
         font-size: 18px;
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &-wrapper {
+      flex-flow: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    &-card {
+      width: 40%;
+    }
+  }
+  @media (min-width: 992px) {
+    &-card {
+      width: 30%;
     }
   }
 }
@@ -295,6 +317,25 @@ button.like {
       }
     }
   }
+
+  @media (min-width: 768px) {
+    &-wrapper {
+      flex-flow: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      a {
+        width: 45%;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    &-wrapper {
+      a {
+        width: 30%;
+      }
+    }
+  }
 }
 
 .menu {
@@ -319,14 +360,32 @@ button.like {
 
   .display-action {
     width: 50%;
+
+    @media (min-width: 992px) {
+      margin: 3em auto;
+      width: 25%;
+    }
   }
 
   &-body {
     width: 100%;
     @include column(start, start);
 
+    @media (min-width: 768px) {
+      flex-flow: row;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
     section {
       width: 100%;
+
+      @media (min-width: 768px) {
+        width: 30%;
+      }
+      @media (min-width: 992px) {
+        width: 25%;
+      }
     }
 
     .section-header {
@@ -369,7 +428,7 @@ button.like {
             width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
-            white-space: nowrap
+            white-space: nowrap;
           }
 
           .text-wrapper {
