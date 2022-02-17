@@ -19,6 +19,8 @@ $tertiary: #99e2d0;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -98,16 +100,17 @@ header {
     padding: 1em 1.5em;
     border-radius: 2em;
     border: none;
-    background: rgb(147, 86, 220);
     background: linear-gradient(345deg, $primary 27%, $secondary 100%);
     color: white;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow:  rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     font-weight: 500;
 
     &:hover,&:active {
       scale: 1.1;
-      transition: 0.3s ease-in;
+      transition: all 700ms ease-in;
+      background:linear-gradient(345deg,#9D67E0 27%, #FF99E2 100%);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
     }
   }
 }
@@ -273,18 +276,17 @@ header {
       cursor: pointer;
 
       .material-icons {
-        background-color: black;
-        background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 0%);
-        background-size: 300px;
+        background-image: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 0%);
+        background-size: auto 200%;
         background-repeat: no-repeat;
-        background-position-y: bottom -200px;
+        background-position-y: bottom;
         background-clip: text;
         color: transparent;
       }
 
       &:hover > .material-icons,&:active > .material-icons {
-        background-position: 0;
-        transition:0.6s ease-out;
+        background-position-y: top;
+        transition:2s ease-out;
       }
     }
   }
@@ -301,6 +303,8 @@ header {
     section {
       width: 100%;
     }
+
+
 
     .section-header {
       margin-left: 15px;
@@ -326,8 +330,10 @@ header {
         @include row(space-between, center);
         height: 80px;
         margin: 1rem 0;
-        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        box-shadow:  rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
         flex-wrap: nowrap;
+        position: relative;
+
 
         .card-content {
           @include column(start, start);
@@ -387,6 +393,31 @@ header {
       }
     }
   }
+  @for $i from 1 to 4 {
+    .menu-card:nth-of-type(#{$i}) {
+      $duration : $i * 200ms;
+      animation-timing-function: ease-out;
+      animation-duration: $duration;
+      animation-name: card-comein;
+      animation-delay: $duration + 500ms;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      
+    }
+  }
+
+  @keyframes card-comein {
+    0% {
+      bottom: -15px;
+      opacity: 0;
+    }
+    50% {
+    }
+    100% {
+      bottom: 0px;
+      opacity: 1;
+    }
+  } 
 }
 
 .bg-grey {
