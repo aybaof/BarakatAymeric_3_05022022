@@ -264,6 +264,11 @@ button.like {
     background-color: #fff;
     margin: 1em 0;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    &:hover,&:active {
+      transform: translateY(-10px);
+      transition: all 0.3s;
+    }
 
     .img-wrapper {
       height: 70%;
@@ -478,7 +483,7 @@ button.like {
       }
     }
   }
-  @for $i from 1 to 4 {
+  @for $i from 1 to 5 {
     .menu-card:nth-of-type(#{$i}) {
       $duration: $i * 300ms;
       animation-timing-function: ease-out;
@@ -535,6 +540,15 @@ footer {
         color: white;
         @include row(start, center);
       }
+    }
+  }
+
+  @media (min-width: 768px){
+    h4 {
+      text-align: center;
+    }
+    ul {
+      align-items: center;
     }
   }
 }

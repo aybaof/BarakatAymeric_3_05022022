@@ -244,6 +244,11 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   background-color: #fff;
   margin: 1em 0;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.restaurant-card:hover, .restaurant-card:active {
+  transform: translateY(-10px);
+  transition: all 0.3s;
 }
 .restaurant-card .img-wrapper {
   height: 70%;
@@ -495,6 +500,14 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   animation-fill-mode: forwards;
   opacity: 0;
 }
+.menu .menu-card:nth-of-type(4) {
+  animation-timing-function: ease-out;
+  animation-duration: 1200ms;
+  animation-name: card-comein;
+  animation-delay: 2200ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 @keyframes card-comein {
   0% {
     bottom: -15px;
@@ -542,6 +555,14 @@ footer ul li a {
   flex-flow: row wrap;
   justify-content: start;
   align-items: center;
+}
+@media (min-width: 768px) {
+  footer h4 {
+    text-align: center;
+  }
+  footer ul {
+    align-items: center;
+  }
 }
 
 .spinner {
