@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +37,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 0.9em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 header.header-menu {
   box-shadow: unset;
@@ -116,7 +115,7 @@ button.like {
   justify-content: center;
   align-items: center;
   border: 0;
-  box-shadow: 0;
+  box-shadow: none;
   background-color: transparent;
   cursor: pointer;
 }
@@ -244,7 +243,7 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   border-radius: 1em;
   background-color: #fff;
   margin: 1em 0;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05), 0px 1px 4px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 .restaurant-card:hover, .restaurant-card:active {
@@ -310,12 +309,12 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .restaurant-wrapper a {
+  .restaurant-wrapper .restaurant-card {
     width: 45%;
   }
 }
 @media (min-width: 992px) {
-  .restaurant-wrapper a {
+  .restaurant-wrapper .restaurant-card {
     width: 30%;
   }
 }
