@@ -57,15 +57,21 @@ header.header-menu .backlink {
   padding: 0.9em;
   background-color: #eaeaea;
 }
-.location p {
+.location div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+}
+.location input {
+  position: relative;
+  background-color: transparent;
   font-size: calc(14px + 4 * (100vw - 300px) / 1300);
   font-weight: 600;
+  border: none;
+  width: 50%;
 }
-.location p span.material-icons {
+.location span.material-icons {
   margin: 0px 5px;
 }
 
@@ -120,7 +126,7 @@ button.like {
   cursor: pointer;
 }
 button.like .material-icons {
-  background-image: linear-gradient(0deg, black 50%, red 0%);
+  background-image: linear-gradient(0deg, black 50%, #9356dc 50%, #ff79da 90%);
   background-size: auto 200%;
   background-repeat: no-repeat;
   background-position-y: bottom;
@@ -359,7 +365,7 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
   justify-content: start;
   align-items: start;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .menu-body {
     flex-flow: row;
     justify-content: space-between;
@@ -368,11 +374,6 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
 }
 .menu-body section {
   width: 100%;
-}
-@media (min-width: 768px) {
-  .menu-body section {
-    width: 30%;
-  }
 }
 @media (min-width: 992px) {
   .menu-body section {
@@ -469,7 +470,7 @@ button.like:hover > .material-icons.fullheart, button.like:active > .material-ic
 }
 .menu-body .card-wrapper .menu-card:hover > .hover-card {
   transition: 0.3s;
-  width: 15%;
+  width: 25%;
 }
 .menu-body .card-wrapper .menu-card:hover > .hover-card .material-icons {
   transition: 0.6s ease-in-out;
