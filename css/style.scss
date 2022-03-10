@@ -428,6 +428,7 @@ button.like {
           rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
         flex-wrap: nowrap;
         position: relative;
+        cursor: pointer;
 
         .card-content {
           @include column(start, start);
@@ -458,7 +459,6 @@ button.like {
         }
 
         .hover-card {
-          width: 15%;
           height: 100%;
           background: $tertiary;
           border-top-right-radius: 15px;
